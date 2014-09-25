@@ -1,6 +1,8 @@
 package skadistats.clarity.match;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 import skadistats.clarity.model.DTClass;
 import skadistats.clarity.model.Entity;
@@ -67,6 +69,10 @@ public class EntityCollection implements Cloneable {
     @Override
     public EntityCollection clone() {
         return CLONER.deepClone(this);
+    }
+
+    public List<Entity> toList() {
+        return Arrays.<Entity>asList(entities);
     }
 
 }
